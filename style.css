@@ -1,0 +1,387 @@
+/* ==========================================================================
+   1. Base Reset & Typography
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   2. Header & Navigation
+   ========================================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #4f46e5; /* Primary Purple/Blue */
+  letter-spacing: -0.5px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+nav ul a:hover {
+  color: #4f46e5;
+}
+
+#themeToggle {
+  background: #f1f5f9;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+#themeToggle:hover {
+  background: #e2e8f0;
+}
+
+/* ==========================================================================
+   3. Hero Section
+   ========================================================================== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #4f46e5;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background-color: #4338ca;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   4. Grid Layouts & Cards (Featured / Latest)
+   ========================================================================== */
+.featured, .latest, .categories {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card a {
+  font-weight: 600;
+  color: #4f46e5;
+  font-size: 14px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.card a:hover {
+  color: #4338ca;
+}
+
+/* ==========================================================================
+   5. Categories Filter
+   ========================================================================== */
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.category-list span {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-list span:hover {
+  background-color: #4f46e5;
+  color: white;
+  border-color: #4f46e5;
+}
+
+/* ==========================================================================
+   6. Sliding Top Ad Banner Styles
+   ========================================================================== */
+.top-ad-marquee {
+  width: 100%;
+  background-color: #0f172a;
+  color: #f8fafc;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+.top-ad-marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* Standard/Header Ad Box */
+.ad-box {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #f1f5f9;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  text-align: center;
+  color: #64748b;
+}
+
+.ad-box h3 {
+  font-size: 16px;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+/* Large Sidebar Ad Box */
+.ad-space.large-ad {
+  max-width: 450px;
+  min-height: 280px;
+  margin: 60px auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #64748b;
+  text-align: center;
+}
+
+.ad-space.large-ad p {
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  color: #334155;
+  font-size: 18px;
+}
+
+.ad-space.large-ad span {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   7. Fancy Subscribe Card Styles
+   ========================================================================== */
+.subscribe-card {
+  max-width: 450px;
+  margin: 0 auto 80px auto;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+}
+
+.subscribe-card h2 {
+  font-size: 22px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.subscribe-card p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subscribe-form input[type="email"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.subscribe-form input[type="email"]:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.subscribe-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.subscribe-form button:hover {
+  background-color: #4338ca;
+}
+
+.subscribe-form button:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   8. Footer
+   ========================================================================== */
+footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer p {
+  margin-bottom: 15px;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  color: #475569;
+}
+
+footer a {
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #f8fafc;
+}
