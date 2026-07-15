@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog - TechHub</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">TechHub</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="blog.html">Blog</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<button id="themeToggle">🌙</button>
+
+</header>
+
+<section class="hero">
+
+<h1>Tech Blog</h1>
+
+<p>Browse our latest tutorials, app guides, and technology articles.</p>
+
+</section>
+
+<section>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search articles..."
+style="width:100%;padding:15px;border-radius:8px;border:1px solid #ccc;margin-bottom:30px;">
+
+<div class="cards" id="blogCards">
+
+<div class="card">
+<h3>How to Download CapCut</h3>
+<p>Complete installation guide using the official website.</p>
+<a href="post.html">Read More</a>
+</div>
+
+<div class="card">
+<h3>VN Editor Tutorial</h3>
+<p>Learn editing step by step.</p>
+<a href="post.html">Read More</a>
+</div>
+
+<div class="card">
+<h3>Windows 11 Optimization</h3>
+<p>Boost your PC performance.</p>
+<a href="post.html">Read More</a>
+</div>
+
+<div class="card">
+<h3>Best Android Apps</h3>
+<p>Useful apps you should try.</p>
+<a href="post.html">Read More</a>
+</div>
+
+<div class="card">
+<h3>Gaming Performance Tips</h3>
+<p>Increase FPS in games.</p>
+<a href="post.html">Read More</a>
+</div>
+
+<div class="card">
+<h3>Top Editing Tricks</h3>
+<p>Professional editing secrets.</p>
+<a href="post.html">Read More</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="ad-box">
+
+<h3>Advertisement Space</h3>
+
+<p>Responsive Banner Ad</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 TechHub</p>
+
+<div>
+
+<a href="privacy.html">Privacy Policy</a> |
+
+<a href="terms.html">Terms</a> |
+
+<a href="disclaimer.html">Disclaimer</a>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+const searchInput=document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",()=>{
+
+const value=searchInput.value.toLowerCase();
+
+const cards=document.querySelectorAll("#blogCards .card");
+
+cards.forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(value)?"block":"none";
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
